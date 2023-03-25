@@ -48,6 +48,7 @@ public class HdfsUtils {
         }
         return rs;
     }
+    
     //新增uploadFile方法
     public static boolean uploadFile(Configuration conf, URI uri, String localFilePath, String hdfsFilePath, boolean overwrite) {
         FileSystem fs = null;
@@ -76,6 +77,7 @@ public class HdfsUtils {
         }
         return rs;
     }
+
     //新增downloadFile方法
     public static boolean downloadFile(Configuration conf, URI uri, String localFilePath, String hdfsFilePath, boolean overwrite) {
         FileSystem fs = null;

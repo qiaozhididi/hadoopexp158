@@ -34,7 +34,7 @@ public class HdfsUtilsTest {
         Configuration conf = new Configuration();
         boolean rs = false;
         //上传的文件路径
-        String localFilePath = "D:\\iot-dev\\hadoopexp158\\src\\main\\resources\\test.txt";
+        String localFilePath = "D:/iot-dev/hadoopexp158/src/main/resources/test.txt";
         //上传到HDFS的文件路径
         String hdfsFilePath = "/158/testUpload.txt";
         try {
@@ -58,10 +58,10 @@ public class HdfsUtilsTest {
         //下载的文件路径
         String hdfsFilePath = "/158/testUpload.txt";
         //下载到本地的文件路径
-        String localFilePath = "D:\\iot-dev\\hadoopexp158\\src\\main\\resources\\testDownload.txt";
+        String localFilePath = "file:/D:/iot-dev/hadoopexp158/src/main/resources/testDownload.txt";
         try {
             URI uri = new URI("hdfs://192.168.128.11:8020");
-            rs = HdfsUtils.downloadFile(conf, uri, hdfsFilePath, localFilePath, true);
+            rs = HdfsUtils.downloadFile(conf, uri, localFilePath, hdfsFilePath, true);
         } catch (Exception e) {
             e.printStackTrace();
         }
