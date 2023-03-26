@@ -65,7 +65,8 @@
                         <manifest>
                             <!-- main()所在的类，注意修改为你的Main主类 -->
 <!--                            <mainClass>hadoop.mapreduce.wc.WordCountMain</mainClass>-->
-                            <mainClass>hadoop158.mapreduce.wc.WordCountMain</mainClass>
+<!--                            <mainClass>hadoop158.mapreduce.wc.WordCountMain</mainClass>-->
+                            <mainClass>hadoop158.mapreduce.sales.SalesMain</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
