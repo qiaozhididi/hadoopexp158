@@ -10,8 +10,8 @@ public class SaleReducer extends Reducer<Text, DoubleWritable, Text, DoubleWrita
     @Override
     protected void reduce(Text k3, Iterable<DoubleWritable> v3, Context context) throws IOException, InterruptedException {
         double sum = 0;
-        for (DoubleWritable v1 : v3) {
-            sum += v1.get();
+        for (DoubleWritable v2 : v3) {
+            sum += v2.get();
         }
         context.write(k3, new DoubleWritable(sum));
     }
