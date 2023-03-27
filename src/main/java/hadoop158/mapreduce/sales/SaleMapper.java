@@ -12,9 +12,7 @@ public class SaleMapper extends Mapper<LongWritable, Text, Text, DoubleWritable>
         //分词
         String[] words = data.split(",");
         //输出 k2 v2
-//        context.write(new Text(words[0]), new DoubleWritable(Double.parseDouble(words[2])));
-        for (String k2 : words) {
-            context.write(new Text(k2), new DoubleWritable(1)); // 1 is the value of the key k2
-        }
+        String year = words[2].split("-")[0];
+        context.write(new Text(year), new DoubleWritable(Double.parseDouble(words[6])));
     }
 }

@@ -2,7 +2,7 @@ package hadoop158.mapreduce.sales;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
@@ -22,6 +22,8 @@ public class SalesMain {
     //8.提交job
     public static void main(String[] args) throws Exception, ClassNotFoundException, InterruptedException {
         Configuration conf = new Configuration();
+//        conf.set("fs.defaultFS", "hdfs://192.169.128.11:8020");
+//        conf.set("yarn.resourcemanager.hostname", "nodea158");
         String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
         int argLen = otherArgs.length;
         if (argLen != 2) {
@@ -41,7 +43,7 @@ public class SalesMain {
         //设置k4的类型
         job.setMapOutputKeyClass(Text.class);
         //设置v4的类型
-        job.setMapOutputValueClass(IntWritable.class);
+        job.setMapOutputValueClass(DoubleWritable.class);
         //可以接收多个参数是结果输出路径
         for (int i = 0; i < argLen - 1; i++) {
             FileInputFormat.addInputPath(job, new Path(otherArgs[i]));
