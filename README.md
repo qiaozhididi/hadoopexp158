@@ -21,6 +21,7 @@
 <h2>二、项目结构</h2>
 <p>本项目包含以下内容：</p>
 <ol>
-<li>HDFS：HDFS的使用代码</li> 
+<li>HDFS：HDFS的使用代码</li>
+<li>MapReduce程序编程处理数据</li>
 <li>持续更新。。。。</li>
 </ol>
