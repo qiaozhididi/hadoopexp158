@@ -12,8 +12,8 @@ public class SaleMapper extends Mapper<LongWritable, Text, Text, DoubleWritable>
         //分词
         String[] words = data.split(",");
         //输出 k2 v2
-        String date[] = words[2].split("-");
-        String year = date[0];
+        String date[] = words[2].split("-");//因为表格中的日期，获取之后是一个1998-01-10的字符串，需要再次分割
+        String year = date[0];//将分割完的字符串的年份取出来
 
         context.write(new Text(year), new DoubleWritable(Double.parseDouble(words[6])));
     }
